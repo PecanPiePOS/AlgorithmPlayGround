@@ -43,5 +43,5 @@ func solution(_ S: String) -> String {
     
 }
 
-solution("0386- -2486-2486-92435689-")
+solution("0386- -2486-2486-9243569-")
 

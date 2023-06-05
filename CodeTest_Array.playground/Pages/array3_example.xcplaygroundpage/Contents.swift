@@ -21,5 +21,5 @@ private func solution(_ A: [String], _ B: [String], _ P: String) -> String {
     return containerArray.sorted()[0]
 }
 
-solution(["a", "b", "c", "d"], ["syjmwryth", "gdb45", "47372", "474747"], "47")
+solution(["a", "b", "c", "cd"], ["syjmwryth", "gdb45", "47372", "474747"], "47")
 
