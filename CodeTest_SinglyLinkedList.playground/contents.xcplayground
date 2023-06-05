@@ -2,6 +2,11 @@
 <playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
     <pages>
         <page name='SinglyLinkedList'/>
-        <page name='SLL_example'/>
+        <page name='SLL1_example'/>
+        <page name='SLL2_example_MySolution'/>
+        <page name='SLL2_example_Worst_BruteForce'/>
+        <page name='SLL2_example_Better_SpaceTime'/>
+        <page name='SLL2_example_Best_Insight'/>
+        <page name='SLL3_example'/>
     </pages>
 </playground>
