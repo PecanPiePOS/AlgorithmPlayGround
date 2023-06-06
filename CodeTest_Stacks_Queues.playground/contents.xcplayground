@@ -4,5 +4,7 @@
         <page name='Stacks'/>
         <page name='Queues'/>
         <page name='QueuesWithDoubleArray'/>
+        <page name='Leet_1700'/>
+        <page name='Leet_387'/>
     </pages>
 </playground>
