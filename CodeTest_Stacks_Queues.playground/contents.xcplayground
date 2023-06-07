@@ -6,5 +6,6 @@
         <page name='QueuesWithDoubleArray'/>
         <page name='Leet_1700'/>
         <page name='Leet_387'/>
+        <page name='Deque'/>
     </pages>
 </playground>

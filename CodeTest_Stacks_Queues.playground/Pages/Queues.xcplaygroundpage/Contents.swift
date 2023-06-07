@@ -5,9 +5,7 @@ public func progressTime(_ closure: () -> ()) -> TimeInterval {
     let start = CFAbsoluteTimeGetCurrent()
     closure()
     let diff = CFAbsoluteTimeGetCurrent() - start
-//    print("--progress--")
     print(diff)
-//    print("----")
 
     return (diff)
 }
