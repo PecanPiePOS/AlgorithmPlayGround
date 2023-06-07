@@ -6,9 +6,10 @@ import Foundation
  Given a string s, find the first non-repeating character in it and return its index. If it does not exist, return -1.
  
  */
-    // MARK: - Wrong Answer -Exception Case of s = "aaaddd" -> 5
+
 class Solution {
-    func firstUniqChar(_ s: String) -> Int {
+    // MARK: - Wrong Answer - Exception Case of s = "aaaddd" -> 5
+    func firstUniqChar1(_ s: String) -> Int {
         var stringQueue = Array(s)
         var characterDict: [Character: Int] = [:]
                 
@@ -30,5 +31,19 @@ class Solution {
 
         return result
     }
-}
+    
+    // MARK: - Right Answer - Using .reduce(into:)
+    func firstUniqChar(_ s: String) -> Int {
+        let mappingOfCharacters = s.reduce(into: [Character: Int]()) { result, character in
+            result[character, default: 0] += 1
+        } // N
+        
+        for (index, character) in s.enumerated() { // N
+            if let count = mappingOfCharacters[character], count == 1 {
+                return index
+            }
+        }
 
+        return -1
+    }
+}
