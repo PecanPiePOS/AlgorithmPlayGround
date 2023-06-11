@@ -60,3 +60,24 @@ class Table {
         return nil
     }
 }
+
+
+
+func myHashFunc(k: Int) -> Int { return k % 100 }
+
+let table : Table = Table.init(hashFunc: myHashFunc)
+
+// 데이터 입력
+table.insert(key: 900254, value: "윤아")
+table.insert(key: 900139, value: "서현")
+table.insert(key: 900827, value: "태연")
+
+// 데이터 탐색
+NSLog("value is %@", table.search(key: 900254) ?? "nil")
+NSLog("value is %@", table.search(key: 900139) ?? "nil")
+NSLog("value is %@", table.search(key: 900827) ?? "nil")
+
+// 데이터 삭제
+NSLog("deleted slot's value is %@", table.delete(key: 900254) ?? "nil")
+NSLog("deleted slot's value is %@", table.delete(key: 900139) ?? "nil")
+NSLog("deleted slot's value is %@", table.delete(key: 900827) ?? "nil")
