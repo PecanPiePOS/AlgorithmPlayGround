@@ -11,7 +11,8 @@ import Foundation
  */
 
 
-func isBalanced(_ s: String) -> Bool {
+    // MARK: - WRONG
+func isBalanced1(_ s: String) -> Bool {
     if s.count % 2 == 1 {
         return false
     }
@@ -56,6 +57,21 @@ func isBalanced(_ s: String) -> Bool {
     }
 }
 
-isBalanced("{}{}([())]")
-isBalanced("([{}([{()[]}])([]))")
+
+//    // MARK: - Right
+//func isBalanced(s: String) -> Bool {
+//    let pairs: [Character: Character] = ["(": ")", "[": "]", "{": "}"]
+//    var stack: [Character] = []
+//    for char in s {
+//        if let match = pairs[char] {
+//            stack.append(match)
+//        } else if stack.last == char {
+//            stack.popLast()
+//        } else {
+//            return false
+//        }
+//    }
+//    
+//    return stack.isEmpty
+//}
 
