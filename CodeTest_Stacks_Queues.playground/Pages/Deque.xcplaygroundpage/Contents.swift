@@ -55,9 +55,9 @@ class Deque<T> {
         return returnValue
     }
     
-    func contains(_ n: T) -> Bool {
-        return enqueue.contains(n) || dequeue.contains(n)
-    }
+//    func contains(_ n: T) -> Bool {
+//        return enqueue.contains(n) || dequeue.contains(n)
+//    }
     
     func removeAll() {
         enqueue.removeAll()
