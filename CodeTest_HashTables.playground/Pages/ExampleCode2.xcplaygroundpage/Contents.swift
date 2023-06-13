@@ -1,6 +1,6 @@
 import Foundation
 
-// MARK: PREVIOUSLY... WE USED TO CALCULATE HASHES in Swift
+// MARK: PREVIOUSLY, WE USED TO CALCULATE HASHES in Swift LIKE THIS...
 struct GridPoint {
     var x: Int
     var y: Int

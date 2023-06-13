@@ -2,8 +2,8 @@
 <playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
     <pages>
         <page name='HashTable'/>
-        <page name='Example Code1'/>
-        <page name='Example Code2'/>
+        <page name='ExampleCode1'/>
+        <page name='ExampleCode2'/>
         <page name='HashValueAndMemoryAddress'/>
     </pages>
 </playground>
