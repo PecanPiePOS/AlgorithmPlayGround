@@ -1,4 +1,3 @@
-
 import Foundation
 
 let MAX_TBL = 100
