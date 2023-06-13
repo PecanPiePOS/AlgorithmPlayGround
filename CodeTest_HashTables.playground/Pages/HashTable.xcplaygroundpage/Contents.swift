@@ -43,16 +43,44 @@ class HashTable {
         }
     }
     
+    func getValue(_ key: String) -> String? {
+        let index = getIndex(key)
+        
+        let possibleCollisions = entries[index]
+        
+        var currentEntry = possibleCollisions
+        while currentEntry != nil {
+            if currentEntry?.key == key {
+                return currentEntry?.value
+            }
+            
+            currentEntry = currentEntry?.next
+        }
+        
+        return nil
+    }
+    
     func getIndex(_ key: String) -> Int {
         let hashCode = abs(key.hashValue)
         
         let index = hashCode % HashTable.initialSize
         print("\(key) - \(hashCode) - \(index)")
         
+        // Forced Collisions
         if key == "John Smith" || key == "Sandra Dee" {
             return 152
         }
         
         return index
+    }
+    
+    subscript(key: String) -> String? {
+        get {
+            getValue(key)
+        }
+        set(newValue) {
+            guard let value = newValue else { return }
+            put(key: key, value: value)
+        }   
     }
 }
