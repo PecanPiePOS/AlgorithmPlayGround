@@ -2,8 +2,9 @@ import UIKit
 
 /*
  
- What is Tree?
+  🌴 What is Tree?
  - Tree consists of Nodes & Branches that doesn't cycle.
+ 
  
    "Linked List used Nodes."
  
@@ -24,9 +25,18 @@ import UIKit
    Child Node: 어떤 노드의 이전 레벨에 연결된 노드
    Leaf Node(Terminal Node): Child Node 가 하나도 없는 노드
    Depth: 트리에서 Node 가 가질 수 있는 가장 깊은 Level
-   
- What is Binary Tree?
- - Binary Tree consists of Nodes that have maximum of TWO branches.
+ 
+*/
+ 
+/**
+ 
+ 🌴² What is Binary Tree?
+ - Binary Tree consists of Nodes that have maximum of TWO branches. AND, there's a rule for the mechanism.
+ 
+ 모든 노드가 자신의 "왼쪽" Child Node 에는 자신의 값보다 "작은" 값이, "오른쪽" Child Node 에는 자신의 값보다 "큰" 값이 오는 규칙을 만족해야 한다.
+ 
+ 
  
  */
+
 
