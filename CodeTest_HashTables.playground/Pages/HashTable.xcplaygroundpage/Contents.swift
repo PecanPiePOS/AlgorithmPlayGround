@@ -3,7 +3,12 @@ import Foundation
 /*
  
  Generally, if the Hash Table Struct has been made correctly, the time Complexity of the functions will be O(1). Worst at O(N).
- If Hash Collision happens it will be O(N)
+    If Hash Collision happens it will be O(N).
+
+    1. Lookups - O(1)
+    2. If Collision happens - worst O(N)
+        It walks the linked list.
+    3. The most popular way to handle the Hash Collisions is via "Chaining".
  
  */
 
@@ -81,6 +86,6 @@ class HashTable {
         set(newValue) {
             guard let value = newValue else { return }
             put(key: key, value: value)
-        }   
+        }
     }
 }
