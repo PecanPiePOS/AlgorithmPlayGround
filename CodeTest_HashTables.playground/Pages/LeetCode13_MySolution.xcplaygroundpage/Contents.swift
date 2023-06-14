@@ -18,9 +18,9 @@ import Foundation
  */
 
 class Solution1 {
+    let romanDictionary: [Character: Int] = ["I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000]
+    
     func romanToInt(_ s: String) -> Int {
-        let romanDictionary: [Character: Int] = ["I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000]
-        
         var array: [Character] = Array(s)
         
         if s.count == 1 {
@@ -62,5 +62,5 @@ class Solution1 {
 
 Solution1().romanToInt("III")
 
-/// Beats Runtime / Memory - 69% / 67%
-/// 19ms / 14.4MB
+/// Beats Runtime / Memory - 76% / 89%
+/// 17ms / 14.2MB
