@@ -5,5 +5,8 @@
         <page name='ExampleCode1'/>
         <page name='ExampleCode2'/>
         <page name='HashValueAndMemoryAddress'/>
+        <page name='LeetCode13_MySolution'/>
+        <page name='LeetCode13_FasterSolution'/>
+        <page name='LeetCode128_MySolution'/>
     </pages>
 </playground>
