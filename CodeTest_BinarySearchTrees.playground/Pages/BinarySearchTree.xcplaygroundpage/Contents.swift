@@ -33,10 +33,16 @@ import UIKit
  🌴² What is Binary Tree?
  - Binary Tree consists of Nodes that have maximum of TWO branches. AND, there's a rule for the mechanism.
  
- 모든 노드가 자신의 "왼쪽" Child Node 에는 자신의 값보다 "작은" 값이, "오른쪽" Child Node 에는 자신의 값보다 "큰" 값이 오는 규칙을 만족해야 한다.
+ 1️⃣ 모든 노드가 자신의 "왼쪽" Child Node 에는 자신의 값보다 "작은" 값이, "오른쪽" Child Node 에는 자신의 값보다 "큰" 값이 오는 규칙을 만족해야 한다.
  
+ 2️⃣ 노드의 데이터 값은 중복되지 않고 유일하다. 노드의 데이터 값은 항상 존재한다. (nil 이 아니다.)
  
+ 3️⃣ BST 는 배열로 구현하지 않는다. 연결리스트로 구현한다.
  
  */
 
+class BSTNode {
+    
+    
+}
 
