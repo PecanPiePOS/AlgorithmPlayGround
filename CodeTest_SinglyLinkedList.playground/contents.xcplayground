@@ -10,5 +10,6 @@
         <page name='SLL3_example'/>
         <page name='LeetCode1669_Solution'/>
         <page name='LeetCode1669_MySolution'/>
+        <page name='LeetCode141_MySolution'/>
     </pages>
 </playground>
