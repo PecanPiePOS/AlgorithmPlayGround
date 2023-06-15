@@ -70,61 +70,61 @@ class BSTNode<T: Comparable> {
     }
 }
 
-//class BinarySearchTree<T: Comparable> {
-//    var root: BSTNode<T>?
-//    
-//    func insert(_ data: T) {
-//        
-//        guard let root = self.root else {
-//            return self.root = BSTNode.init(data: data)
-//        }
-//        
-//        var currentNode = root
-//        
-//        while true {
-//            // BST 의 값은 유일해야 한다.
-//            if currentNode.data == data {
-//                print("중복된 값입니다.")
-//                return
-//            }
-//            
-//            if currentNode.data > data {
-//                guard let nextNode = currentNode.left else {
-//                    return currentNode.left = BSTNode.init(data: data)
-//                }
-//                
-//                currentNode = nextNode
-//            } else {
-//                guard let nextNode = currentNode.right else {
-//                    return currentNode.right = BSTNode.init(data: data)
-//                }
-//                
-//                currentNode = nextNode
-//            }
-//        }
-//    }
-//    
-//    func search(from data: T) -> Bool {
-//        if self.root == nil { return false }
-//        
-//        var currentNode = root
-//        
-//        while let node = currentNode {
-//            if node.data == data {
-//                return true
-//            }
-//            
-//            if node.data > data {
-//                currentNode = node.left
-//            } else {
-//                currentNode = node.right
-//            }
-//        }
-//        
-//        return false
-//    }
-//}
-//
+class BinarySearchTree<T: Comparable> {
+    var root: BSTNode<T>?
+    
+    func insert(_ data: T) {
+        
+        guard let root = self.root else {
+            return self.root = BSTNode.init(data: data)
+        }
+        
+        var currentNode = root
+        
+        while true {
+            // BST 의 값은 유일해야 한다.
+            if currentNode.data == data {
+                print("중복된 값입니다.")
+                return
+            }
+            
+            if currentNode.data > data {
+                guard let nextNode = currentNode.left else {
+                    return currentNode.left = BSTNode.init(data: data)
+                }
+                
+                currentNode = nextNode
+            } else {
+                guard let nextNode = currentNode.right else {
+                    return currentNode.right = BSTNode.init(data: data)
+                }
+                
+                currentNode = nextNode
+            }
+        }
+    }
+    
+    func search(from data: T) -> Bool {
+        if self.root == nil { return false }
+        
+        var currentNode = root
+        
+        while let node = currentNode {
+            if node.data == data {
+                return true
+            }
+            
+            if node.data > data {
+                currentNode = node.left
+            } else {
+                currentNode = node.right
+            }
+        }
+        
+        return false
+    }
+}
+
 //    // MARK: - Remove Methods
 //    /// Case 1: Child Node 가 0개인 Leaf Node 삭제
 //    /// Case 2: Child Node 가 1개 있는 Node 삭제
@@ -282,7 +282,7 @@ class BSTNode<T: Comparable> {
 //            + diagram(for: node.left, bottom + "│ ", bottom + "└──", bottom + " ")
 //    }
 //}
-//
+
 //let BST = BinarySearchTree<Int>()
 //BST.insert(50)
 //BST.insert(100)
