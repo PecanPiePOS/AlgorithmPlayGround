@@ -125,163 +125,163 @@ class BinarySearchTree<T: Comparable> {
     }
 }
 
-//    // MARK: - Remove Methods
-//    /// Case 1: Child Node 가 0개인 Leaf Node 삭제
-//    /// Case 2: Child Node 가 1개 있는 Node 삭제
-//    /// Case 3: Child Node 가 2개 있는 Node 삭제
-//extension BinarySearchTree {
-//    
-//    // 삭제한다 = Parent Node 의 Branch(left or right) 를 끊어주는 것 (📍nil 을 할당하는 것)
-//    //      -> ⭐️ 1. 삭제할 Node, 2. 삭제할 Node 의 Parent Node
-//    //            를 탐색 후 정보를 알고 있어야함! 어떤 삭제 Case 에서든 필요한 과정임!
-//    func remove(from data: T) -> Bool {
-//        guard let root = self.root, root.data != data else { return false }
-//        
-//        var parentNode = root
-//        var currentNode: BSTNode? = root // Optional 이 될 수 있으므로 따로 선언했다.
-//        
-//        // 삭제할 노드 탐색하기
-//        while let node = currentNode {
-//            if node.data == data { break }
-//            if node.data > data {
-//                currentNode = node.left
-//            } else {
-//                currentNode = node.right
-//            }
-//            
-//            parentNode = node
-//        }
-//        
-//        // 탐색 실패 - 삭제할 노드에서 current Node == nil 이 돼서 while 을 탈출했다면 여기서 false 를 받을 수 있다.
-//        guard let deleteNode = currentNode else {
-//            return false
-//        }
-//        
-//// ------------------------------ 공통 작업 -----------------------------------
-//        
-//        // Case 1: Child Node 가 0개인 Leaf Node 삭제
-//        if deleteNode.left == nil && deleteNode.right == nil {
-//            if parentNode.data > data {
-//                parentNode.left = nil
-//            } else {
-//                parentNode.right = nil
-//            }
-//            
-//            return true
-//        }
-//        
-//        // Case 2: Child Node 가 1개인 Node 삭제
-//        if (deleteNode.left != nil) && (deleteNode.right == nil) {
-//            if parentNode.data > data {
-//                parentNode.right = deleteNode.left
-//            } else {
-//                parentNode.left = deleteNode.left
-//            }
-//            
-//            return true
-//        }
-//        
-//        if (deleteNode.left == nil) && (deleteNode.right != nil) {
-//            if parentNode.data > data {
-//                parentNode.right = deleteNode.right
-//            } else {
-//                parentNode.left = deleteNode.right
-//            }
-//            
-//            return true
-//        }
-//        
-//        // Case 3: Child Node 가 2개인 Node 삭제
-//        /// 이때, 2가지의 Case 로 나눌 수 있다. 이 case 중 한 가지 방법으로만 구현하면 된다.
-//        /// 1️⃣ 삭제할 Node 의 "오른쪽" 자식 중, 가장 "작은" 값을 찾아 삭제할 부모 Node 가 가리키게 한다. -> 결국 오른쪽 자식 Node 중, left 의 브랜치를 계속 타고 내려가면 찾을 수 있다.
-//        /// 2️⃣ 삭제할 Node 의 "왼쪽" 자식 중, 가장 "큰" 값을 찾아 삭제할 부모 Node 가 가리키게 한다. -> 결국 왼쪽 자식 Node 중, right 의 브랜치를 계속 타고 내려가면 찾을 수 있다.
-//        /// 둘 다 구현해보자.
-//        
-//        // 삭제할 Node 의 "오른쪽" 자식 중, 가장 "작은" 값을 찾아 삭제할 부모 Node 가 가리키게 한다.
-//        /// Remove Node through getting smallest data of right Children's nodes. 1️⃣
-//        /// 이미 여기까지 왔다면 deleteNode 는 찾아 놓은 상태.
-//        guard let rightNode = deleteNode.right else { return false }
-//        
-//        var changeNode = rightNode
-//        var changeParentNode = rightNode
-//        
-//            // left 노드의 끝까지 타고 내려가기 (Finding smallest Data)
-//        while let nextNode = changeNode.left {
-//            changeParentNode = changeNode
-//            changeNode = nextNode
-//        }
-//        
-//        if let changeChildNode = changeNode.right {
-//            changeParentNode.left = changeChildNode
-//        } else {
-//            changeParentNode.left = nil
-//        }
-//        
-//        if parentNode.data > data {
-//            parentNode.left = changeNode
-//        } else {
-//            parentNode.right = changeNode
-//        }
-//        
-//            // Delete Node 의 왼쪽, 오른쪽 자식을 ChangeNode 에게 이식
-//        changeNode.left = deleteNode.left
-//        changeNode.right = deleteNode.right
-//        
-//// -------------------------------------------
-//        // 삭제할 Node 의 "왼쪽" 자식 중, 가장 "큰" 값을 찾아 삭제할 부모 Node 가 가리키게 한다.
-//        /// Remove Node through getting largest data of left Children's nodes. 2️⃣
-////        guard let leftNode = deleteNode.left else { return false }
-////
-////        var changeNode2 = leftNode
-////        var changeParentNode2 = leftNode
-////
-////            // right 노드의 끝까지 타고 내려가기 (Finding largest Data)
-////        while let nextNode = changeNode2.right {
-////            changeParentNode2 = changeNode2
-////            changeNode2 = nextNode
-////        }
-////
-////        if let changeChildNode = changeNode2.left {
-////            changeParentNode2.right = changeChildNode
-////        } else {
-////            changeParentNode2.right = nil
-////        }
-////
-////        if parentNode.data > data {
-////            parentNode.left = changeNode2
-////        } else {
-////            parentNode.right = changeNode2
-////        }
-////
-////        changeNode2.right = deleteNode.right
-////        changeNode2.left = deleteNode.left
-//// -------------------------------------------
-//        
-//        return true
-//    }
-//}
+    // MARK: - Remove Methods
+    /// Case 1: Child Node 가 0개인 Leaf Node 삭제
+    /// Case 2: Child Node 가 1개 있는 Node 삭제
+    /// Case 3: Child Node 가 2개 있는 Node 삭제
+extension BinarySearchTree {
+    
+    // 삭제한다 = Parent Node 의 Branch(left or right) 를 끊어주는 것 (📍nil 을 할당하는 것)
+    //      -> ⭐️ 1. 삭제할 Node, 2. 삭제할 Node 의 Parent Node
+    //            를 탐색 후 정보를 알고 있어야함! 어떤 삭제 Case 에서든 필요한 과정임!
+    func remove(from data: T) -> Bool {
+        guard let root = self.root, root.data != data else { return false }
+        
+        var parentNode = root
+        var currentNode: BSTNode? = root // Optional 이 될 수 있으므로 따로 선언했다.
+        
+        // 삭제할 노드 탐색하기
+        while let node = currentNode {
+            if node.data == data { break }
+            if node.data > data {
+                currentNode = node.left
+            } else {
+                currentNode = node.right
+            }
+            
+            parentNode = node
+        }
+        
+        // 탐색 실패 - 삭제할 노드에서 current Node == nil 이 돼서 while 을 탈출했다면 여기서 false 를 받을 수 있다.
+        guard let deleteNode = currentNode else {
+            return false
+        }
+        
+// ------------------------------ 공통 작업 -----------------------------------
+        
+        // Case 1: Child Node 가 0개인 Leaf Node 삭제
+        if deleteNode.left == nil && deleteNode.right == nil {
+            if parentNode.data > data {
+                parentNode.left = nil
+            } else {
+                parentNode.right = nil
+            }
+            
+            return true
+        }
+        
+        // Case 2: Child Node 가 1개인 Node 삭제
+        if (deleteNode.left != nil) && (deleteNode.right == nil) {
+            if parentNode.data > data {
+                parentNode.right = deleteNode.left
+            } else {
+                parentNode.left = deleteNode.left
+            }
+            
+            return true
+        }
+        
+        if (deleteNode.left == nil) && (deleteNode.right != nil) {
+            if parentNode.data > data {
+                parentNode.right = deleteNode.right
+            } else {
+                parentNode.left = deleteNode.right
+            }
+            
+            return true
+        }
+        
+        // Case 3: Child Node 가 2개인 Node 삭제
+        /// 이때, 2가지의 Case 로 나눌 수 있다. 이 case 중 한 가지 방법으로만 구현하면 된다.
+        /// 1️⃣ 삭제할 Node 의 "오른쪽" 자식 중, 가장 "작은" 값을 찾아 삭제할 부모 Node 가 가리키게 한다. -> 결국 오른쪽 자식 Node 중, left 의 브랜치를 계속 타고 내려가면 찾을 수 있다.
+        /// 2️⃣ 삭제할 Node 의 "왼쪽" 자식 중, 가장 "큰" 값을 찾아 삭제할 부모 Node 가 가리키게 한다. -> 결국 왼쪽 자식 Node 중, right 의 브랜치를 계속 타고 내려가면 찾을 수 있다.
+        /// 둘 다 구현해보자.
+        
+        // 삭제할 Node 의 "오른쪽" 자식 중, 가장 "작은" 값을 찾아 삭제할 부모 Node 가 가리키게 한다.
+        /// Remove Node through getting smallest data of right Children's nodes. 1️⃣
+        /// 이미 여기까지 왔다면 deleteNode 는 찾아 놓은 상태.
+        guard let rightNode = deleteNode.right else { return false }
+        
+        var changeNode = rightNode
+        var changeParentNode = rightNode
+        
+            // left 노드의 끝까지 타고 내려가기 (Finding smallest Data)
+        while let nextNode = changeNode.left {
+            changeParentNode = changeNode
+            changeNode = nextNode
+        }
+        
+        if let changeChildNode = changeNode.right {
+            changeParentNode.left = changeChildNode
+        } else {
+            changeParentNode.left = nil
+        }
+        
+        if parentNode.data > data {
+            parentNode.left = changeNode
+        } else {
+            parentNode.right = changeNode
+        }
+        
+            // Delete Node 의 왼쪽, 오른쪽 자식을 ChangeNode 에게 이식
+        changeNode.left = deleteNode.left
+        changeNode.right = deleteNode.right
+        
+// -------------------------------------------
+        // 삭제할 Node 의 "왼쪽" 자식 중, 가장 "큰" 값을 찾아 삭제할 부모 Node 가 가리키게 한다.
+        /// Remove Node through getting largest data of left Children's nodes. 2️⃣
+//        guard let leftNode = deleteNode.left else { return false }
 //
-//    // MARK: - Drawing Methods
-//extension BinarySearchTree {
-//    func drawDiagram() {
-//        print(diagram(for: self.root))
-//    }
-// 
-//    private func diagram(for node: BSTNode<T>?,
-//                         _ top: String = "",
-//                         _ root: String = "",
-//                         _ bottom: String = "") -> String {
-//       guard let node = node else {
-//            return root + "nil\n"
+//        var changeNode2 = leftNode
+//        var changeParentNode2 = leftNode
+//
+//            // right 노드의 끝까지 타고 내려가기 (Finding largest Data)
+//        while let nextNode = changeNode2.right {
+//            changeParentNode2 = changeNode2
+//            changeNode2 = nextNode
 //        }
-//        if node.left == nil && node.right == nil {
-//            return root + "\(node.data)\n"
+//
+//        if let changeChildNode = changeNode2.left {
+//            changeParentNode2.right = changeChildNode
+//        } else {
+//            changeParentNode2.right = nil
 //        }
-//        return diagram(for: node.right, top + " ", top + "┌──", top + "│ ")
-//            + root + "\(node.data)\n"
-//            + diagram(for: node.left, bottom + "│ ", bottom + "└──", bottom + " ")
-//    }
-//}
+//
+//        if parentNode.data > data {
+//            parentNode.left = changeNode2
+//        } else {
+//            parentNode.right = changeNode2
+//        }
+//
+//        changeNode2.right = deleteNode.right
+//        changeNode2.left = deleteNode.left
+// -------------------------------------------
+        
+        return true
+    }
+}
+
+    // MARK: - Drawing Methods
+extension BinarySearchTree {
+    func drawDiagram() {
+        print(diagram(for: self.root))
+    }
+ 
+    private func diagram(for node: BSTNode<T>?,
+                         _ top: String = "",
+                         _ root: String = "",
+                         _ bottom: String = "") -> String {
+       guard let node = node else {
+            return root + "nil\n"
+        }
+        if node.left == nil && node.right == nil {
+            return root + "\(node.data)\n"
+        }
+        return diagram(for: node.right, top + " ", top + "┌──", top + "│ ")
+            + root + "\(node.data)\n"
+            + diagram(for: node.left, bottom + "│ ", bottom + "└──", bottom + " ")
+    }
+}
 
 //let BST = BinarySearchTree<Int>()
 //BST.insert(50)
