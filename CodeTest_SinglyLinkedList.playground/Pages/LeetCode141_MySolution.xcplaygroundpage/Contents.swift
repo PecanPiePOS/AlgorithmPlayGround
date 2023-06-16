@@ -33,6 +33,8 @@ public class ListNode {
 }
 
 class Solution {
+    /// 시작점이 달라야하며, === 로 비교하면 성공
+    /// == 로 비교하면? -> [1,1,1,1] 일때 실패.
     func hasCycle(_ head: ListNode?) -> Bool {
         var slowHop: ListNode? = head
         var fastHop: ListNode? = head?.next
@@ -41,7 +43,7 @@ class Solution {
             slowHop = slowHop?.next
             fastHop = fastHop?.next?.next
             
-            if slowHop?.val == fastHop?.val {
+            if slowHop === fastHop {
                 return true
             }
         }
