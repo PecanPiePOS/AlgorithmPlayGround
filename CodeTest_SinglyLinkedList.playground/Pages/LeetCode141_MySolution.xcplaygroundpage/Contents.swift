@@ -34,6 +34,18 @@ public class ListNode {
 
 class Solution {
     func hasCycle(_ head: ListNode?) -> Bool {
+        var slowHop: ListNode? = head
+        var fastHop: ListNode? = head?.next
         
+        while slowHop != nil, fastHop != nil  {
+            slowHop = slowHop?.next
+            fastHop = fastHop?.next?.next
+            
+            if slowHop?.val == fastHop?.val {
+                return true
+            }
+        }
+        
+        return false
     }
 }
