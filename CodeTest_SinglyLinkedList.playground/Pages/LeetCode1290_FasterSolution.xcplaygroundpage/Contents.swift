@@ -1,7 +1,21 @@
-//: [Previous](@previous)
-
 import Foundation
 
-var greeting = "Hello, playground"
+public class ListNode {
+    public var val: Int
+    public var next: ListNode?
+    public init() { self.val = 0; self.next = nil; }
+    public init(_ val: Int) { self.val = val; self.next = nil; }
+    public init(_ val: Int, _ next: ListNode?) { self.val = val; self.next = next; }
+}
 
-//: [Next](@next)
+    // MARK: - What?
+class Solution {
+    func getDecimalValue(_ head: ListNode?) -> Int {
+        var result = 0, node = head
+        while node != nil {
+            result = result << 1 | node!.val
+            node = node?.next
+        }
+        return result
+    }
+}
