@@ -32,6 +32,14 @@ public class TreeNode {
 
 class Solution {
     func isSameTree(_ p: TreeNode?, _ q: TreeNode?) -> Bool {
+        guard p != nil || q != nil else { return true }
+        guard let pNode = p, let qNode = q else { return false }
         
+        if pNode.val == qNode.val && isSameTree(pNode.left, qNode.left) && isSameTree(pNode
+            .right, qNode.right) {
+            return true
+        }
+        
+        return false
     }
 }

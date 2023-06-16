@@ -3,7 +3,7 @@
     <pages>
         <page name='BinarySearchTree_Perfect_wo_Recursive'/>
         <page name='BinarySearchTree_Imperfect_wo_Recursive'/>
-        <page name='LeetCode100_MySolution'/>
         <page name='BinarySearchTree_wt_Recursive'/>
+        <page name='LeetCode100_MySolution'/>
     </pages>
 </playground>
