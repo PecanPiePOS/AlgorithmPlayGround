@@ -8,6 +8,24 @@ class Node<T: Comparable> {
     init(data: T) {
         self.data = data
     }
+    
+    var minimumData: Node {
+        if left == nil {
+            return self
+        } else {
+            guard let left else { return Node(data: 0 as! T) }
+            return left.minimumData
+        }
+    }
+    
+    var maximumData: Node {
+        if right == nil {
+            return self
+        } else {
+            guard let right else { return Node(data: 0 as! T)}
+            return right.maximumData
+        }
+    }
 }
 
 class BSTRecursive<T: Comparable> {
@@ -69,11 +87,9 @@ extension BSTRecursive {
                          _ root: String = "",
                          _ bottom: String = "") -> String {
         guard let node = node else {
-            print("??")
             return root + "nil\n"
         }
         if node.left == nil && node.right == nil {
-            print("???")
             return root + "\(node.data)\n"
         }
         return diagram(for: node.right, top + " ", top + "┌──", top + "│ ")
