@@ -8,5 +8,6 @@
         <page name='LeetCode13_MySolution'/>
         <page name='LeetCode13_FasterSolution'/>
         <page name='LeetCode128_MySolution'/>
+        <page name='LeetCode36_MySolution'/>
     </pages>
 </playground>

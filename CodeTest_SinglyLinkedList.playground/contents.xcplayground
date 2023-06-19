@@ -13,5 +13,7 @@
         <page name='LeetCode141_MySolution'/>
         <page name='LeetCode1290_MySolution'/>
         <page name='LeetCode1290_FasterSolution'/>
+        <page name='LeetCode328_MySolution'/>
+        <page name='LeetCode328_Solution'/>
     </pages>
 </playground>
