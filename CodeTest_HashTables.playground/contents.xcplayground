@@ -9,5 +9,6 @@
         <page name='LeetCode13_FasterSolution'/>
         <page name='LeetCode128_MySolution'/>
         <page name='LeetCode36_MySolution'/>
+        <page name='ProgrammersTableHash_MySolution'/>
     </pages>
 </playground>
