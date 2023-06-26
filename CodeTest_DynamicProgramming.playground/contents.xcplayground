@@ -3,6 +3,7 @@
     <pages>
         <page name='DP'/>
         <page name='Example_Code1'/>
-        <page name='Untitled Page'/>
+        <page name='LeetCode22_MySolution'/>
+        <page name='Programmers1'/>
     </pages>
 </playground>
