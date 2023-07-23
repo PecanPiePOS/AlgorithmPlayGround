@@ -8,5 +8,6 @@
         <page name='LeetCode222_MySolution'/>
         <page name='BinarySearchTree_Traverse_wt_Recursive'/>
         <page name='Example_Problem_1'/>
+        <page name='Test'/>
     </pages>
 </playground>
