@@ -3,5 +3,7 @@
     <pages>
         <page name='Example_Code1'/>
         <page name='Untitled Page'/>
+        <page name='BubbleSorting'/>
+        <page name='QuickSorting'/>
     </pages>
 </playground>
