@@ -4,6 +4,7 @@
         <page name='Example_Code1'/>
         <page name='Untitled Page'/>
         <page name='BubbleSorting'/>
-        <page name='QuickSorting'/>
+        <page name='QuickSorting1'/>
+        <page name='QuickSorting2'/>
     </pages>
 </playground>
