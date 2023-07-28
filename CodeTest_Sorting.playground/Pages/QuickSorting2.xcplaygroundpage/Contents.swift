@@ -1,5 +1,14 @@
 import Foundation
 
+public func progressTime(_ closure: () -> ()) -> TimeInterval {
+    let start = CFAbsoluteTimeGetCurrent()
+    closure()
+    let diff = CFAbsoluteTimeGetCurrent() - start
+    print(diff)
+    
+    return (diff)
+}
+
 class QuickSort {
     
     func quickSort<T: Comparable>(_ array: [T]) -> [T] {
@@ -16,4 +25,12 @@ class QuickSort {
 
 let array = [4,6,68,5,2,1,3,8,48,7,14,22,17]
 let ggg = QuickSort()
-print(ggg.quickSort(array))
+
+
+
+
+/// Avg time of 0.0009 s
+progressTime {
+    ggg.quickSort(array)
+}
+

@@ -1,9 +1,17 @@
-
 import Foundation
 
-var numbers:[Int] = [9,1,8,3,2,10,4,7,5,6]
+public func progressTime(_ closure: () -> ()) -> TimeInterval {
+    let start = CFAbsoluteTimeGetCurrent()
+    closure()
+    let diff = CFAbsoluteTimeGetCurrent() - start
+    print(diff)
+    
+    return (diff)
+}
 
-extension Array where Element == Int{
+var array = [4,6,68,5,2,1,3,8,48,7,14,22,17]
+
+extension Array where Element == Int {
     
     mutating func sortByQuick() -> [Element] {
         return divide(self)
@@ -44,4 +52,8 @@ extension Array where Element == Int{
     }
 }
 
-numbers.sortByQuick()
+/// Avg time of 0.0092 s
+progressTime {
+    array.sortByQuick()
+}
+
