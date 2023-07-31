@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
     <pages>
-        <page name='Example_Code1'/>
+        <page name='QuickSorting'/>
         <page name='BubbleSorting'/>
+        <page name='MergeSorting'/>
+        <page name='Example_Code1'/>
         <page name='QuickSorting1'/>
         <page name='QuickSorting2'/>
         <page name='QuickSorting_Leet912'/>
