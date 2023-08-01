@@ -5,8 +5,8 @@
         <page name='BubbleSorting'/>
         <page name='MergeSorting'/>
         <page name='Example_Code1'/>
-        <page name='QuickSorting1'/>
-        <page name='QuickSorting2'/>
+        <page name='QuickSortingOtherCode'/>
         <page name='QuickSorting_Leet912'/>
+        <page name='HeapSorting'/>
     </pages>
 </playground>
