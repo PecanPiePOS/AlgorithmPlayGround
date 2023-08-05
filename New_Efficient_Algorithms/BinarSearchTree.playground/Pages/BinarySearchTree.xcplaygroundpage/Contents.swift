@@ -110,15 +110,17 @@ extension BinarySearchTree {
         }
     }
     
-    /// ⭐️ 이렇게 init 을 만들면, insert 를 여러번에 걸쳐 하지 않아도 처음 init 에 arrat 를 넣으면 저절로 정렬된 Binary Tree 가 만들어진다.
-    /// 예시로,
-    /// - let tree = BinarySearchTree<Int>(array: [7,2,5,10,9,1])
-    /// 처럼 사용할 수 있다.
-    public convenience init(array: [T]) {
-        precondition(array.count > 0)
-        self.init(value: array.first!)
-        for item in array.dropFirst() {
-            insert(value: item)
-        }
-    }
+//    /// ⭐️ 이렇게 init 을 만들면, insert 를 여러번에 걸쳐 하지 않아도 처음 init 에 arrat 를 넣으면 저절로 정렬된 Binary Tree 가 만들어진다.
+//    /// 예시로,
+//    /// - let tree = BinarySearchTree<Int>(array: [7,2,5,10,9,1])
+//    /// 처럼 사용할 수 있다.
+//    public convenience init(array: [T]) {
+//        precondition(array.count > 0)
+//        self.init(value: array.first!)
+//        for item in array.dropFirst() {
+//            insert(value: item)
+//        }
+//    }
+    
+    
 }
