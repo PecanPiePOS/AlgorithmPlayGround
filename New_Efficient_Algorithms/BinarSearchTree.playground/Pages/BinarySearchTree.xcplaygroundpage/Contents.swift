@@ -125,6 +125,51 @@ extension BinarySearchTree {
     }
 }
 
+    // MARK: - Search
+extension BinarySearchTree {
+    
+    /// Node 를 정하고 그 노드로 움직이자.
+    public func search(value: T) -> BinarySearchTree? {
+        // 자신이 Root 일 때를 말한다.
+        var node: BinarySearchTree? = self
+        while let currentNode = node {
+            if value < currentNode.value {
+                node = currentNode.left
+            } else if value > currentNode.value {
+                node = currentNode.right
+            } else {
+                return node
+            }
+        }
+        return nil
+    }
+}
+
+//    /// Traversal
+//extension BinarySearchTree {
+//    
+//    /// Left->Parent->Right
+//    public func traverseInOrder(process: (T) -> Void) {
+//      left?.traverseInOrder(process: process)
+//      process(value)
+//      right?.traverseInOrder(process: process)
+//    }
+//    
+//    /// Parent->Left->Right
+//    public func traversePreOrder(process: (T) -> Void) {
+//      process(value)
+//      left?.traversePreOrder(process: process)
+//      right?.traversePreOrder(process: process)
+//    }
+//
+//    /// Left->Right->Parent
+//    public func traversePostOrder(process: (T) -> Void) {
+//      left?.traversePostOrder(process: process)
+//      right?.traversePostOrder(process: process)
+//      process(value)
+//    }
+//}
+
 extension BinarySearchTree: CustomStringConvertible {
     /// Tree 를 간단하게 보여줄 수 있는 Method 다.
     /// 예시)
