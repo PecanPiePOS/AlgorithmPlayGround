@@ -145,30 +145,30 @@ extension BinarySearchTree {
     }
 }
 
-//    /// Traversal
-//extension BinarySearchTree {
-//    
-//    /// Left->Parent->Right
-//    public func traverseInOrder(process: (T) -> Void) {
-//      left?.traverseInOrder(process: process)
-//      process(value)
-//      right?.traverseInOrder(process: process)
-//    }
-//    
-//    /// Parent->Left->Right
-//    public func traversePreOrder(process: (T) -> Void) {
-//      process(value)
-//      left?.traversePreOrder(process: process)
-//      right?.traversePreOrder(process: process)
-//    }
-//
-//    /// Left->Right->Parent
-//    public func traversePostOrder(process: (T) -> Void) {
-//      left?.traversePostOrder(process: process)
-//      right?.traversePostOrder(process: process)
-//      process(value)
-//    }
-//}
+    /// Traversal
+extension BinarySearchTree {
+    
+    /// Left->Parent->Right
+    public func traverseInOrder(process: (T) -> Void) {
+      left?.traverseInOrder(process: process)
+      process(value)
+      right?.traverseInOrder(process: process)
+    }
+
+    /// Parent->Left->Right
+    public func traversePreOrder(process: (T) -> Void) {
+      process(value)
+      left?.traversePreOrder(process: process)
+      right?.traversePreOrder(process: process)
+    }
+
+    /// Left->Right->Parent
+    public func traversePostOrder(process: (T) -> Void) {
+      left?.traversePostOrder(process: process)
+      right?.traversePostOrder(process: process)
+      process(value)
+    }
+}
 
 extension BinarySearchTree: CustomStringConvertible {
     /// Tree 를 간단하게 보여줄 수 있는 Method 다.
