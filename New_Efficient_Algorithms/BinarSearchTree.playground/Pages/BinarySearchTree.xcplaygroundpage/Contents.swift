@@ -21,6 +21,7 @@ import PlaygroundSupport
  3. Post-Order
  
  - `In-Order (Depth First)`: 먼저 "왼쪽 Child Node" 을 통과한 뒤, "자신 Node" 를 통과하고 마지막으로 "오른쪽 Child Node" 를 통과한다.
+ ⭐️ => 해당 Traverse 를 하면, 오름차순으로 정렬된 Key 를 얻을 수 있다.
 
  - `Pre-Order`: "자신 Node" 를 먼저 통과 후, "왼쪽 Child Node" 그 다음, "오른쪽 Child Node" 를 통과한다.
  
