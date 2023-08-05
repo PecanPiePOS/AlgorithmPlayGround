@@ -36,6 +36,7 @@ import PlaygroundSupport
  
  */
 
+    // MARK: - Properties
 public final class BinarySearchTree<T: Comparable> {
     /// private(set) 이란 외부에서 Read 가능, 하지만 Set 은 불가능.
     private(set) public var value: T
@@ -86,6 +87,7 @@ public final class BinarySearchTree<T: Comparable> {
     }
 }
 
+    //MARK: - Insertion
 extension BinarySearchTree {
     
     /// 중요한 포인트는, 항상 ⭐️ Root Node 에 insert 를 해야한다는 점이다.
@@ -121,6 +123,22 @@ extension BinarySearchTree {
             insert(value: item)
         }
     }
-    
-    
+}
+
+extension BinarySearchTree: CustomStringConvertible {
+    /// Tree 를 간단하게 보여줄 수 있는 Method 다.
+    /// 예시)
+    /// ((1) <- 2 -> (5)) <- 7 -> ((9) <- 10)
+    public var description: String {
+        var desc = ""
+        if let left = left {
+            desc += "(\(left.description)) <-"
+        }
+        
+        desc += "\(value)"
+        if let right = right {
+            desc += "-> (\(right.description))"
+        }
+        return desc
+    }
 }
