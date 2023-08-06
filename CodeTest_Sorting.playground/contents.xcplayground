@@ -8,5 +8,6 @@
         <page name='QuickSortingOtherCode'/>
         <page name='QuickSorting_Leet912'/>
         <page name='HeapSorting'/>
+        <page name='MergeSort_Descending'/>
     </pages>
 </playground>
