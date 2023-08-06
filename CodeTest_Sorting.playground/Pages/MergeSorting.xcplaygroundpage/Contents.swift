@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 /**
  
@@ -69,7 +69,15 @@ public func progressTime(_ closure: () -> ()) -> TimeInterval {
     return (diff)
 }
 
+//progressTime {
+//    let k = mergeSort(array)
+//    print(k)
+//}
+
+
+    /// 엥 근데... 이건... 0.07 초 걸림....
+    /// 기존 sort 기능... 하긴,,, 머리를 싸매고 만들었을텐데 당연히 더 나아야지...
 progressTime {
-    let k = mergeSort(array)
+    let k = array.sorted(by: >)
     print(k)
 }
