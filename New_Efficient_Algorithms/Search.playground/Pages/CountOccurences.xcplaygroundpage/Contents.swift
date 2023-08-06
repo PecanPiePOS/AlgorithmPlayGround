@@ -8,6 +8,7 @@ import Foundation
  
  - 📍 궁금 포인트 2 : 정렬된 배열에서 찾는 Occurences 를 찾는 방법은 Binary Search 가 최선인가?
  
+ - 📍 궁금 포인트 3 : 애초에 그러면, Sorted Array 가 있다고 한다면 그저, Binary Search 를 떠올리면 되는 것인가?
  
  
  `Count Occurences` with `Binary Search` 는,\
@@ -47,10 +48,11 @@ func countOccurences<T: Comparable>(of key: T, in array: [T]) -> Int {
         return low
     }
     
+    print([leftIndex, rightIndex])
     return rightIndex - leftIndex
 }
 
 
-let array = [0, 1, 1, 3, 3, 3, 3, 6, 8, 10, 11, 11, 12,12,12,12,12,16,16,17,47,4893,5000]
+let array = [1, 2, 3, 3, 3, 3, 6, 8, 10, 11, 11, 12,12,12,12,12,16,16,17,47,4893,5000]
 
-countOccurences(of: 12, in: array)
+countOccurences(of: 0, in: array)
