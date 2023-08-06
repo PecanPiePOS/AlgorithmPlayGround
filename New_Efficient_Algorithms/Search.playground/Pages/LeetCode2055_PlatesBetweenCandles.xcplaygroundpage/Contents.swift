@@ -25,12 +25,51 @@ import Foundation
   
  */
 
+/*
+ 생각해보자...
+ 우선 Binary Search 는 안되고... 애초에 Sort 랑은 관계가 없고...
+ for 문을 2번 돌리는건 항상 Worst Case 이고...
+ for 문은 항상 1번만. 언제나. 어떤 상황에서든.
+ 
+ */
+
 class Solution {
     func platesBetweenCandles(_ s: String, _ queries: [[Int]]) -> [Int] {
-        var answer: [Int] = Array(repeating: 0, count: queries.count)
+        let queryCount = queries.count
+        let data: [Character] = Array(s)
+        var candleList: [Int] = [Int]()
+        var answer: [Int] = Array(repeating: 0, count: queryCount)
         
-        
-        
+        for i in 0..<data.count {
+            if data[i] == "|" {
+                candleList.append(i)
+            }
+        }
+
+        for i in 0..<queryCount {
+            if let leftIndex = candleList.firstIndex(where: {
+                $0 >= queries[i][0] }), let rightIndex = candleList.lastIndex(where: { $0 <= queries[i][1] }) {
+                if leftIndex < rightIndex {
+                    answer[i] = candleList[rightIndex] - candleList[leftIndex] - rightIndex + leftIndex
+                }
+            }
+        }
         return answer
     }
 }
+
+/*
+ 
+ candleList[rightIndex] - candleList[leftIndex]
+ = Int - Int
+ 
+  => 이 부분은 이제 queries 로 솎아낸 배열에서 "|" 의 위치를 찾은 인덱스의 차이 값. 내가 원하는
+ 
+ 
+ - rightIndex + leftIndex
+ 
+  => 이 부분은 CandleList 에서 인덱스 간의 차이. 즉 인덱스 사이에 있는 Int 들의 개수는 "|" 의 개수와 같으니깐.
+ 
+ 
+ 
+ */
