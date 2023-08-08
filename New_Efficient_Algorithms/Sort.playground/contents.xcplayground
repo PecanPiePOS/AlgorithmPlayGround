@@ -4,5 +4,6 @@
         <page name='InsertionSort'/>
         <page name='MergeSortBetter'/>
         <page name='MergeSort'/>
+        <page name='SelectMinOrMax'/>
     </pages>
 </playground>
