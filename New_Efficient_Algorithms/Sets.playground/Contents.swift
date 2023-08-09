@@ -57,14 +57,54 @@ extension UnionFind {
     // Find
 extension UnionFind {
     
+    mutating func setOf(_ element: T) -> Int? {
+        if let indexOfElement = index[element] {
+            return setByIndex(indexOfElement)
+        } else {
+            return nil
+        }
+    }
+    
+    /**
+     1. 해당 index 가, root node 를 가리키는지 확인하다.
+     2. 해당 노드의 parent node 를 계속해서 호출한다. [Recursive]
+     추가적으로, 현재 node 의 parent node 를 root node 의 index 로 값을 덮어쓴다. 그렇게 되면, 다음에 해당 node 를 통해 찾게 되면, 더욱 빠르게 root node 를 찾을 수 있다.
+     3. root node 의 index 를 반환한다. 그러면 내가 찾는 값이 어떤 set 에 있는지 확인 가능하다.
+     
+     해당 함수 setByIndex 를 지나면 다음 처럼 변한다.
+        7                       7
+       /                      /  \
+      2            ->        2    4
+       \
+        4
+     */
+    private mutating func setByIndex(_ index: Int) -> Int {
+        if parent[index] == index {   // 1
+            return index
+        } else {
+            parent[index] = setByIndex(parent[index])  // 2
+            return parent[index]    // 3
+        }
+    }
 }
 
     // Union
 extension UnionFind {
-    
-}
-
-    // Path Compression
-extension UnionFind {
-    
+    /**
+     마지막 Operation 은 Union 이다.
+     
+     */
+    mutating func unionSetsContaining(_ firstElement: T, and secondElement: T) {
+        if let firstSet = setOf(firstElement), let secondSet = setOf(secondElement) {
+            if firstSet != secondSet {
+                if size[firstSet] < size[secondSet] {
+                    parent[firstSet] = secondSet
+                    size[secondSet] += size[firstSet]
+                } else {
+                    parent[secondSet] = firstSet
+                    size[firstSet] += size[secondSet]
+                }
+            }
+        }
+    }
 }
