@@ -11,7 +11,7 @@ import UIKit
  */
     
     /// arc4random 을 사용한 방법.
-func select<T>(from a: [T], count requested: Int) -> [T] {
+func selectArc<T>(from a: [T], count requested: Int) -> [T] {
     var examined = 0
     var selected = 0
     var b = [T]()
@@ -30,6 +30,18 @@ func select<T>(from a: [T], count requested: Int) -> [T] {
         examined += 1
     }
     return b
+}
+
+    /// O(K) 에 대해서... 이게 속도가 맞나...
+func select<T>(from a: [T], count k: Int) -> [T] {
+    var a = a
+    for i in 0..<k {
+        let r = Int.random(in: i...a.count - 1)
+        if i != r {
+            a.swapAt(i, r)
+        }
+    }
+    return Array(a[0..<k])
 }
 
     /// Dictionary 를 사용한 방법.
@@ -59,21 +71,31 @@ public func progressTime(_ closure: () -> ()) -> TimeInterval {
     return (diff)
 }
 
-var array: [Int] {
-    var array: [Int] = []
-    for _ in 1...2000 {
-        array.append(Int(arc4random_uniform(10000)))
-    }
-    return array
-}
+let array = Array(0...100000)
 
 progressTime {
-    // Avg of 1.1 s
-    print(selectRandom(from: array, count: 200))
+    // 10000 -> count 100: 0.08
+    // 10000 -> count 1000: 0.44
+    // 100000 -> Count 1000: 1.18
+    // 100000 -> Count 30: 0.45
+    // 100000 -> Count 10000: 21.9
+    _ = selectRandom(from: array, count: 10000)
 }
 
+//progressTime {
+//    // 10000 -> count 100: 0.39
+//    // 10000 -> count 1000: 3.55
+//    // 100000 -> Count 1000: 33.1
+//    /// OUT OF LEAGUE
+//    _ = select(from: array, count: 1000)
+//}
+
 progressTime {
-    
+    // 10000 -> count 100: 0.15
+    // 10000 -> count 1000: 0.56
+    // 100000 -> Count 1000: 1.16
+    // 100000 -> Count 10000: 20.3
+    _ = selectArc(from: array, count: 10000)
 }
 
 
