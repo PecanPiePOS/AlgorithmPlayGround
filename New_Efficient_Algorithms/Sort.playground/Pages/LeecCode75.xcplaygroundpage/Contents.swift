@@ -7,3 +7,9 @@ import Foundation
 
     You must solve this problem without using the library's sort function.
 */
+
+class Solution {
+    func sortColors(_ nums: inout [Int]) {
+        
+    }
+}
