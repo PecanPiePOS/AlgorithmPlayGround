@@ -6,5 +6,6 @@
         <page name='MergeSort'/>
         <page name='SelectMinOrMax'/>
         <page name='K-thLargestElement'/>
+        <page name='LeecCode75'/>
     </pages>
 </playground>
