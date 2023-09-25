@@ -14,4 +14,10 @@ class Solution {
     }
 }
 
+let nowVersion = "3.43.0"
+let laterVersion = "3.43.11"
+
+let nowVersionArr = nowVersion.split(separator: ".").map { $0 }.joined()
+
+print(nowVersionArr)
 
